@@ -1,3 +1,5 @@
+'use strict';
+
 const objectA = {
   id: 2,
   name: 'Jane Doe',
@@ -16,13 +18,20 @@ const objectB = {
 const expectedKeys = ['id', 'name', 'age', 'city'];
 
 function validateKeys(object, expectedKeys) {
-  if (Object.keys(object).length !== (expectedKeys.length)) {
-      return false;
-  } for (var i = 0; i < expectedKeys.length; ++i) {
-      if (Object.keys(object).find key => key === expectedKeys[i])}
+  let objKeys1 = Object.keys(object);
 
+  if (objKeys1.length !== (expectedKeys.length)) {
+    return false;
+  } 
+  
+  for (var i = 0; i < expectedKeys.length; i++) {
+    if (objKeys1.indexOf(expectedKeys[i]) === -1) {
       return false;
-
+    }
+  }
+  return true;
+}
+    
 
  
 /* From here down, you are not expected to 
